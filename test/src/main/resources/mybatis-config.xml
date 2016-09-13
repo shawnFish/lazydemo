@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTO Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<property name="dialectClass" value="com.eliteam.quick4j.core.feature.orm.dialec.MySql5Dialect"/>
+	</properties>
+	
+	<!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->
+	<settings>
+		<!-- 全局映射器启动缓存.开启二级缓存，在mybatis中只要缓存的配置都值得是二级缓存  -->
+		<setting name="cacheEnabled" value="true"/>
+		
+		<!-- 查询时，关闭关联对象及时加载以提高性能(即启用延时加载).延迟加载的总开关 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		
+		<!-- aggressiveLazyLoading设置成false才是启用延迟加载 -->
+		<!-- <setting name="aggressiveLazyLoading" value="true" /> -->
+		
+		<!-- 对于未知的SQL查询，允许返回不同的结果集以达到通用的效果 -->
+		<setting name="multipleResultSetsEnabled" value="true"/>
+		
+		<!-- 允许使用列标签代替列名 -->
+		<setting name="useColumnLable" value="true"/>
+		
+		<!-- 不允许使用自定义的主键值(比如 由程序生成UUID 32编码作为兼职)，数据表的PK生成策略将被覆盖 -->
+		<setting name="useGeneratedKeys" value="false"/>
+		
+		<!-- 给予被嵌套的resultMap以字段-属性的映射支持 FULL，PARTIAL -->
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+		
+		<!-- 对于批量更新操作缓存SQL以提高性能 BATCH,SIMPLE -->
+		<!-- <setting name="defaultExecutorType" value="BATCH"/> -->
+		
+		<!-- 数据库超过25000秒仍未响应则超时 -->
+		<!-- <setting name="defaultStatementTimeout" value="25000"/> -->
+		
+		<!-- Allows using RowRounds on nested statements -->
+		<setting name="safeRowBoundsEnabled" value="false"/>
+		
+		
+		
+	</settings>
+</configuration>
